@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* Function
+=========================================================== */
+// ラップ要素の横幅を計算する関数
+@function slide-width($width, $margin, $num, $mag) {
+  @return ($width + $margin) * $num * $mag;
+}
+
+/* Function
+=========================================================== */
+@mixin loop-slide(
+  $element,
+  $item-width: 320,
+  $item-height: 320,
+  $item-margin: 0,
+  $item-num: 3,
+  $duration: 25,
+  $hover-stop: false,
+  $sp-mag: 0.5
+) {
+  // ラップ要素の横幅を格納する変数
+  $list-width: slide-width($item-width, $item-margin, $item-num, 1);
+
+  /* .loop-slide
+  =========================================================== */
+  @at-root {
+    /* Block
+    ───────────────────────────────── */
+    #{$element} {
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Wrapper
+    ───────────────────────────────── */
+    #{$element}__wrapper {
+      display: flex;
+      height: inherit;
+    }
+
+    /* List
+    ───────────────────────────────── */
+    #{$element}__list {
+      display: flex;
+      height: inherit;
+      @include mq-pc {
+        width: rem($list-width);
+      }
+      @include mq-sp {
+        width: vw($list-width * $sp-mag);
+        animation-duration: #{$duration * $sp-mag}s;
+      }
+      @at-root .-animation & {
+        animation-name: infinite-slide;
+        animation-timing-function: linear;
+        animation-duration: #{$duration}s;
+        animation-iteration-count: infinite;
+        will-change: transform;
+      }
+    }
+
+    /* Item
+    ───────────────────────────────── */
+    #{$element}__item {
+      height: inherit;
+      @include mq-pc {
+        width: rem($item-width);
+        margin-right: rem($item-margin);
+      }
+      @include mq-sp {
+        width: vw($item-width * $sp-mag);
+        margin-right: vw($item-margin * 2 * $sp-mag);
+      }
+    }
+
+    /* Image
+    ───────────────────────────────── */
+    #{$element}__image {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Hover
+    ───────────────────────────────── */
+    @include mq-pc {
+      @if $hover-stop == true {
+        #{$element}__item {
+          transition: opacity $base-duration $easing 0s;
+        }
+        #{$element}:hover {
+          #{$element}__list {
+            animation-play-state: paused;
+          }
+          #{$element}__item {
+            opacity: 0.8;
+          }
+          #{$element}__item:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Keyframes
+=========================================================== */
+@keyframes infinite-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.LoopSlide {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  @include loop-slide(
+    $element: &,
+    $item-width: 320,
+    $item-height: 320,
+    $item-margin: 0,
+    $item-num: 2,
+    $duration: 13,
+    $hover-stop: false,
+    $sp-mag: 0.5
+  );
+}

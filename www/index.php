@@ -26,53 +26,20 @@
   <!-- Main
   −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− -->
   <main class="main" role="main">
-    <section class="loop-slide">
-      <div class="loop-slide__list-wrap">
-        <ul class="loop-slide__list">
-          <li class="loop-slide__item">
+    <section class="LoopSlide -loopSlide">
+      <div class="LoopSlide__wrapper">
+        <ul class="LoopSlide__list">
+          <?php for($i = 0; $i < 2; $i++):?>
+          <li class="LoopSlide__item">
             <img
-              src="http://placehold.jp/320x320.png?text=01"
-              srcset="http://placehold.jp/640x640.png?text=01 2x,
-                      http://placehold.jp/320x320.png?text=01 1x"
-              alt="" width="320" height="320">
+              class="LoopSlide__image"
+              src="http://placehold.jp/320x320.png?text=<?php echo $i?>"
+              srcset="http://placehold.jp/640x640.png?text=<?php echo $i?> 2x,
+                      http://placehold.jp/320x320.png?text=<?php echo $i?> 1x"
+              alt="" width="320" height="320"
+              loading="lazy">
           </li>
-          <li class="loop-slide__item">
-            <img
-              src="http://placehold.jp/320x320.png?text=02"
-              srcset="http://placehold.jp/640x640.png?text=02 2x,
-                      http://placehold.jp/320x320.png?text=02 1x"
-              alt="" width="320" height="320">
-          </li>
-          <li class="loop-slide__item">
-            <img
-              src="http://placehold.jp/320x320.png?text=03"
-              srcset="http://placehold.jp/640x640.png?text=03 2x,
-                      http://placehold.jp/320x320.png?text=03 1x"
-              alt="" width="320" height="320">
-          </li>
-        </ul>
-        <ul class="loop-slide__list -clone">
-          <li class="loop-slide__item">
-            <img
-              src="http://placehold.jp/320x320.png?text=01"
-              srcset="http://placehold.jp/640x640.png?text=01 2x,
-                      http://placehold.jp/320x320.png?text=01 1x"
-              alt="" width="320" height="320">
-          </li>
-          <li class="loop-slide__item">
-            <img
-              src="http://placehold.jp/320x320.png?text=02"
-              srcset="http://placehold.jp/640x640.png?text=02 2x,
-                      http://placehold.jp/320x320.png?text=02 1x"
-              alt="" width="320" height="320">
-          </li>
-          <li class="loop-slide__item">
-            <img
-              src="http://placehold.jp/320x320.png?text=03"
-              srcset="http://placehold.jp/640x640.png?text=03 2x,
-                      http://placehold.jp/320x320.png?text=03 1x"
-              alt="" width="320" height="320">
-          </li>
+          <?php endfor;?>
         </ul>
       </div>
     </section>

@@ -1,58 +1,55 @@
 {
-  "name": "Web-Develop-Template",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "ie": "11"
+          }
+        }
+      ]
+    ]
+  },
+  "name": "GulpTask",
   "version": "1.0.0",
-  "description": "- babel + ES6 - browserSync - sass - ~~pug~~ - cache - watch - notify - plumber - progeny - rename - replace - image - fractal - postcss",
-  "main": "gulpfile.babel.js",
+  "description": "",
   "dependencies": {
-    "gulp-sass-inheritance": "^1.1.0"
-  },
-  "devDependencies": {
-    "@frctl/fractal": "^1.1.7",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babelify": "^8.0.0",
-    "browser-sync": "^2.23.7",
-    "browserify": "^16.2.0",
-    "css-mqpacker": "^6.0.2",
-    "gsap": "^1.20.4",
-    "gulp": "^3.9.1",
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/polyfill": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/register": "^7.8.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
     "gulp-asset-cache": "^1.1.5",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "8.0.0",
     "gulp-cached": "^1.1.1",
-    "gulp-changed": "^3.2.0",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-if": "^2.0.2",
-    "gulp-image": "^4.3.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-image": "^6.0.0",
     "gulp-progeny": "^0.4.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^5.0.0",
-    "lodash": "^4.17.10",
-    "postcss-sort-alphabetically": "^1.1.1",
-    "swiper": "^4.2.2",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inumoarukeba-a/Web-Develop-Template.git"
+    "url": "git+https://github.com/JYoshida0809/gulp.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "J.Yoshida",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inumoarukeba-a/Web-Develop-Template/issues"
+    "url": "https://github.com/JYoshida0809/gulp/issues"
   },
-  "homepage": "https://github.com/inumoarukeba-a/Web-Develop-Template#readme"
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ]
 }
