@@ -89,7 +89,7 @@
     @include mq-pc {
       @if $hover-stop == true {
         #{$element}__item {
-          transition: opacity $base-duration $easing 0s;
+          transition: opacity 0.21s $easing 0s;
         }
         #{$element}:hover {
           #{$element}__list {
@@ -116,19 +116,4 @@
   100% {
     transform: translateX(-100%);
   }
-}
-
-.LoopSlide {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  @include loop-slide(
-    $element: &,
-    $item-width: 320,
-    $item-height: 320,
-    $item-margin: 0,
-    $item-num: 2,
-    $duration: 13,
-    $hover-stop: false,
-    $sp-mag: 0.5
-  );
 }

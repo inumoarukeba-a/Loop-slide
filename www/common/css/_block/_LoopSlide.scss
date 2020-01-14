@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* Block
+───────────────────────────────── */
+.LoopSlide {
+  @include loop-slide(
+    $element: &,
+    $item-width: 320,
+    $item-height: 320,
+    $item-margin: 0,
+    $item-num: 2,
+    $duration: 13,
+    $hover-stop: true,
+    $sp-mag: 0.5
+  );
+}
