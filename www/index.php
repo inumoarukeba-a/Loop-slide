@@ -29,7 +29,7 @@
     <section class="LoopSlide -loopSlide">
       <div class="LoopSlide__wrapper">
         <ul class="LoopSlide__list">
-          <?php for($i = 0; $i < 2; $i++):?>
+          <?php for($i = 0; $i < 3; $i++):?>
           <li class="LoopSlide__item">
             <img
               class="LoopSlide__image"
